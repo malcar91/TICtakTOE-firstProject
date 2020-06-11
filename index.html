@@ -12,6 +12,83 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-    </body>
+      <h1>TIC tac TOE</h1>
+      <br>
+
+      <main>
+        <section id="logged-in">
+          <!-- <h2>Welcome Back!</h2> -->
+          <h2>Login Here</h2>
+          <p id="message"></p>
+            <form id="log-in">
+              <input type="text" name="credentials[email]" placeholder="Email here" required>
+              <input type="password" name="credentials[password]" placeholder="Password here" required>
+              <button type="submit">Log In</button>
+            </form>
+        </section>
+        <br>
+
+        <section id="signed-up">
+        <h2>Sign Up Here</h2>
+          <form id="sign-up">
+            <input type="text" name="credentials[email]" placeholder="Email here" required>
+            <input type="password" name="credentials[password]" placeholder="Password here" required>
+            <input type="password" name="credentials[password_confirmation]" placeholder="Password confirmation" required>
+            <button type="submit">Sign up</button>
+          </form>
+        </section>
+        <br>
+
+        <section id="signed-in-options">
+          <p id="message2"></p>
+          <form id="change-pw">
+          <h3>Change Password</h3>
+          <p id="message3"></p>
+            <input type="password" name="passwords[old]" placeholder="old password" required>
+            <input type="password" name="passwords[new]" placeholder="new password" required>
+            <button type="submit">Change Password</button>
+          </form>
+          <button id="log-out" type="click">LOG OUT</button>
+        </section>
+        <br>
+
+
+
+
+        <!-- <section>
+          <h3>Choose Game Mode</h3>
+            <button type="click">Best of 3</button>
+            <button type="click">Best of 5</button>
+            <button type="click">Best of 7</button>
+        </section>
+
+        <section>
+          <h3>Choose Player</h3>
+          <button type="click">X's</button>
+          <button type="click">O's</button>
+        </section> -->
+
+        <section id="game-section">
+          <h2>Game Board</h2>
+
+          <div data-cell-index='0'></div>
+          <div class="container">
+            <p id="message4"></p>
+            <button id="game-create" type="click">START GAME</button>
+            <div class="row h-100 board">
+              <div id="one" class="col-4 col-lg-4 box"></div>
+              <div id="two" class="col-4 col-lg-4 box"></div>
+              <div id="three" class="col-4 col-lg-4 box"></div>
+              <div id="four" class="col-4 col-lg-4 box"></div>
+              <div id="five" class="col-4 col-lg-4 box"></div>
+              <div id="six" class="col-4 col-lg-4 box"></div>
+              <div id="seven" class="col-4 col-lg-4 box"></div>
+              <div id="eight" class="col-4 col-lg-4 box"></div>
+              <div id="nine" class="col-4 col-lg-4 box"></div>
+            </div>
+          </div>
+      </section>
+
+    </main>
+  </body>
 </html>
