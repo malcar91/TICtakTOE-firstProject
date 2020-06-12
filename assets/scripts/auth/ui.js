@@ -1,11 +1,10 @@
 const store = require('./../store')
 
 const onSignUpSuccess = function (response) {
-  $('#message2').text('WELCOME ' + response.user.email + ', enjoy the game!')
+  $('#message2').text('WELCOME ' + response.user.email + ', log in to PLAY!')
   $('form').trigger('reset')
-  $('#game-section').show()
   $('#signed-in-options').show()
-  $('#logged-in').hide()
+  $('#logged-in').show()
   $('#signed-up').hide()
 }
 
@@ -15,7 +14,7 @@ const onSignUpFailure = function () {
 }
 
 const onLogInSuccess = function (response) {
-  $('#message2').text('Logged In! Welcome back!')
+  $('#message2').fadeOut(5000).text('Logged In! Welcome back!')
   $('form').trigger('reset')
   $('#signed-in-options').show()
   $('#game-section').show()
@@ -25,12 +24,12 @@ const onLogInSuccess = function (response) {
 }
 
 const onLogInFailure = function () {
-  $('#message').text('Log in FAILED')
+  $('#message').fadeOut(5000).text('Log in FAILED')
   $('form').trigger('reset')
 }
 
 const onChangePwSuccess = function () {
-  $('#message3').text('Password changed succesfully!')
+  $('#message3').fadeOut(5000).text('Password changed succesfully!')
   $('form').trigger('reset')
 }
 
@@ -40,11 +39,12 @@ const onChangePwFailure = function () {
 }
 
 const onLogOutSuccess = function () {
-  $('#message2').text('LOGGED OUT, See you soon!')
+  $('#message2').show().text('LOGGED OUT, See you soon!')
   $('form').trigger('reset')
   $('#game-section').hide()
   $('#change-pw').hide()
   $('#logged-in').show()
+  $('#signed-in-options').hide()
 }
 
 const onGameCreateSuccess = function (response) {
@@ -59,7 +59,7 @@ const onGameCreateFailure = function () {
 }
 
 const onGameUpdateSuccess = function (response) {
-  $('#message4').text('Game')
+  $('#message4').fadeOut(2000).text('Nice Choice')
   $('form').trigger('reset')
   store.game = response.game
 }
