@@ -19,6 +19,7 @@ $(() => {
   $('#game-section').hide()
 
   $('#game-create').on('click', userAction.onGameCreate)
+  $('#game-index').on('click', userAction.onGameIndex)
 
   $('.box').on('click', userAction.onGameUpdate)
   // $('#two').on('click', userAction.onGameUpdate)

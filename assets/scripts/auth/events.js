@@ -2,7 +2,7 @@ const getFormFields = require('./../../../lib/get-form-fields.js')
 
 const api = require('./api.js')
 const ui = require('./ui.js')
-const store = require('./../store')
+const store = require('./../store.js')
 // const cells = ['#one', '', '', '', '', '', '', '', '']
 
 const onSignUp = function (event) {
@@ -46,17 +46,9 @@ const onLogOut = function (event) {
 }
 
 const onGameCreate = function (event) {
-  // event.preventDefault()
-
-  // const onStartGame = function (event) {
   event.preventDefault()
-  // $('.box').html('')
-  // store.game.cells = ['', '', '', '', '', '', '', '', '']
-  // store.game.over = false
-  // player = 'X'
-  // $('.row').show()
-
-  // $('#start-game').on('click', onGameCreate)
+  $('.box').html('')
+  player = 'X'
 
   api.gameCreate()
     .then(ui.onGameCreateSuccess)
@@ -64,13 +56,8 @@ const onGameCreate = function (event) {
 }
 
 let player = 'X'
-// let gameMove
-// let position
-// let gameWin
-// let gameModel = ['', '', '', '', '', '', '', '', '']
-// let cells = ['', '', '', '', '', '', '', '', '']
 const onGameUpdate = function (event) {
-  // event.preventDefault()
+  event.preventDefault()
 
   // console.log('and then update game', store.game)
 
@@ -79,11 +66,12 @@ const onGameUpdate = function (event) {
   // const position = $('.box').data('cell-index')
 
   // gameMove = player
-  const position = $(event.target).data('cell-index')
-  store.game.cells[position] = player
+
+  store.game.cells[$(event.target).data('cell-index')] = player
+  // store.game.cells[position] = player
   // gameModel[$(event.target).data('cell-index')] = player
 
-  if ($(event.target).text() === '') {
+  if ($(event.target).is(':empty')) {
     $(event.target).text(player)
     if (player === 'X') {
       player = 'O'
@@ -91,35 +79,55 @@ const onGameUpdate = function (event) {
       player = 'X'
     }
   } else {
-    $('#message4').show().text('BOX IS ALREADY TAKEN!')
+    $('#message4').show().fadeOut(4000).text('BOX IS ALREADY TAKEN!')
     return 'invalid move'
   }
+
+  // const checkWinner = function () {
   const box = store.game.cells
-  if (box[0] !== '' && box[0] === box[1] && box[0] === box[2]) {
+  console.log(box)
+  if (box[0] === box[1] && box[0] === box[2] && box[0] !== '') {
     console.log('Winner is ' + box[0])
     // $('.box').hide()
     // $('#message5').show().text(`Player ${box[0]} won. Want to play again?1, click START GAME`)
     // gameWin = true
-  } else if (box[3] !== '' && box[3] === box[4] && box[3] === box[5]) {
+    store.game.over = true
+  } else if (box[3] === box[4] && box[4] === box[5] && box[3] !== '') {
     console.log('Winner is ' + box[3])
     $('message#4').text('YOU WON!')
-  } else if (box[6] === box[7] && box[6] === box[8] && box[6] !== '') {
-    console.log('Winner is' + box[6])
-  } else if (box[0] === box[3] && box[0] === box[6] && box[0] !== '') {
+    store.game.over = true
+  } else if (box[6] === box[7] && box[7] === box[8] && box[6] !== '') {
+    console.log('Winner is ' + box[6])
+    store.game.over = true
+  } else if (box[0] === box[3] && box[3] === box[6] && box[0] !== '') {
     console.log('Winner is ' + box[0])
-  } else if (box[1] === box[4] && box[1] === box[7] && box[1] !== '') {
+    store.game.over = true
+  } else if (box[1] === box[4] && box[4] === box[7] && box[1] !== '') {
     console.log('Winner is ' + box[1])
-  } else if (box[2] === box[5] && box[2] === box[8] && box[2] !== '') {
+    store.game.over = true
+  } else if (box[2] === box[5] && box[5] === box[8] && box[2] !== '') {
     console.log('Winner is ' + box[2])
-  } else if (box[0] === box[4] && box[0] === box[8] && box[0] !== '') {
-    console.log('Winner is' + box[0])
-  } else if (box[2] === box[4] && box[2] === box[6] && box[2] !== '') {
-    console.log('Winner is' + box[2])
+    store.game.over = true
+  } else if (box[0] === box[4] && box[4] === box[8] && box[0] !== '') {
+    console.log('Winner is ' + box[0])
+    store.game.over = true
+  } else if (box[2] === box[4] && box[4] === box[6] && box[2] !== '') {
+    console.log('Winner is ' + box[2])
+    store.game.over = true
   }
+  const position = $(event.target).data('cell-index')
 
   api.gameUpdate(position, player)
     .then(ui.onGameUpdateSuccess)
     .catch(ui.onGameUpdateFailure)
+}
+
+const onGameIndex = function (event) {
+  console.log(onGameIndex)
+  event.preventDefault()
+  api.gameIndex()
+    .then(ui.onGameIndexSuccess)
+    .catch(ui.onGameIndexFailure)
 }
 
 module.exports = {
@@ -127,8 +135,10 @@ module.exports = {
   onLogIn,
   onChangePw,
   onLogOut,
+  onGameCreate,
   onGameUpdate,
-  onGameCreate
+  player,
+  onGameIndex
   // gameModel
   // gameMove,
   // gameIndex

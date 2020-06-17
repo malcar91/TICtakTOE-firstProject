@@ -1,5 +1,5 @@
 const config = require('./../config')
-const store = require('./../store')
+const store = require('./../store.js')
 
 const signUp = function (data) {
   return $.ajax({
@@ -54,44 +54,45 @@ const logOut = function (formData) {
   })
 }
 
-const gameCreate = function () {
+const gameCreate = function (response) {
   // console.log('store in game create is ', store)
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/games',
+    url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      games: '{}'
+    data: '{}'
+  })
+}
+
+const gameIndex = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games/',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
-const gameIndex = function (status) {
+const gameShow = function (data) {
+  console.log('gameShow', gameShow)
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/games',
+    url: config.apiUrl + '/games/_id',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Token token=' + store.user
     }
   })
 }
-// const gameShow = function (data) {
-//   return $.ajax({
-//     method: 'GET',
-//     url: config.apiUrl + '/games/:id',
-//     headers: {
-//       Authorization: 'Token token=' + store.user
-//     }
-//   })
-// }
 
 const gameUpdate = function (position, player) {
   console.log('position is ', position)
   console.log('player is ', player)
-  console.log('id is ', store.game._id)
-  console.log('over is ' + store.game.over)
+  // console.log('id is ', store.game._id)
+  // console.log('over is ' + store.game.over)
+  // set index to 0 and value to x
 
   return $.ajax({
     method: 'PATCH',
@@ -116,7 +117,8 @@ module.exports = {
   logIn,
   changePw,
   logOut,
-  gameIndex,
   gameCreate,
+  gameIndex,
+  gameShow,
   gameUpdate
 }

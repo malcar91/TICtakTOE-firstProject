@@ -4,6 +4,7 @@
   font-family: 'Shadows Into Light', cursive;
 
 }
+
 h1 {
   text-align: center;
   font-size: 97px;
@@ -132,6 +133,10 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    color: #489d1b;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
 
   // size of text:
   font-size: 15vh;
@@ -140,6 +145,7 @@ h3 {
 
   &:nth-child(3n) {
     border-right: 0;
+
   }
 
   // -1n + 3 will end up grabbing the final 3 boxes in the grid

@@ -1,4 +1,4 @@
-const store = require('./../store')
+const store = require('./../store.js')
 
 const onSignUpSuccess = function (response) {
   $('#message2').text('WELCOME ' + response.user.email + ', log in to PLAY!')
@@ -14,7 +14,7 @@ const onSignUpFailure = function () {
 }
 
 const onLogInSuccess = function (response) {
-  $('#message2').fadeOut(5000).text('Logged In! Welcome back!')
+  $('#message2').fadeOut(3000).text('Logged In! Welcome back!')
   $('form').trigger('reset')
   $('#signed-in-options').show()
   $('#game-section').show()
@@ -39,7 +39,8 @@ const onChangePwFailure = function () {
 }
 
 const onLogOutSuccess = function () {
-  $('#message2').show().text('LOGGED OUT, See you soon!')
+  $('#message2').show(400).delay(5000).fadeOut(3000).text('LOGGED OUT, See you soon!')
+  $('#message2').show(400).fadeIn('BUT WAIT!... COME BACK!')
   $('form').trigger('reset')
   $('#game-section').hide()
   $('#change-pw').hide()
@@ -61,12 +62,21 @@ const onGameCreateFailure = function () {
 const onGameUpdateSuccess = function (response) {
   $('#message4').fadeOut(2000).text('Nice Choice')
   $('form').trigger('reset')
-  store.game = response.game
+  // store.game = response.game
 }
 
 const onGameUpdateFailure = function () {
   $('#message4').text('game did not update')
   $('form').trigger('reset')
+}
+
+const onGameIndexSuccess = function (response) {
+  console.log(response)
+  $('#message4').text(`Lets look at your history: ${response.games.length}`)
+}
+
+const onGameIndexFailure = function () {
+  $('#message4').text('NEW GAME DID NOT START')
 }
 
 module.exports = {
@@ -81,6 +91,7 @@ module.exports = {
   onGameCreateSuccess,
   onGameCreateFailure,
   onGameUpdateSuccess,
-  onGameUpdateFailure
-
+  onGameUpdateFailure,
+  onGameIndexSuccess,
+  onGameIndexFailure
 }
