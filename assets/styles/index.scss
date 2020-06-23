@@ -36,8 +36,15 @@ h3 {
   flex-flow: column wrap;
   text-align: center;
   background: 878E99;
+}
 
-  // padding: 10px, 10px, 10px, 10px;
+.forms2 {
+  width: 300px;
+  height: 62.5;
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  text-align: center;
 }
 
 .first {
@@ -60,6 +67,22 @@ h3 {
   display: flex;
   justify-content: center;
   border: 2px solid black;
+  margin: auto;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.fourth {
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  margin: auto;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  border: 2px solid white;
   margin: auto;
   font-family: 'Shadows Into Light', cursive;
 }

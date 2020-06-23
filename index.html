@@ -17,13 +17,19 @@
     <body>
       <h1>TIC tac TOE</h1>
       <br>
-      <p id="message2"></p>
-      <p id="message3"></p>
+
       <main>
+        <section class="message forms2" id="message-forms23">
+          <form>
+            <div id="message"></div>
+            <div id="message2"></div>
+            <div id="message3"></div>
+          </form>
+        </section>
+
         <section class="first forms" id="logged-in">
           <!-- <h2>Welcome Back!</h2> -->
           <h2>Login Here</h2>
-          <p id="message"></p>
             <form id="log-in">
               <input class="input" type="text" name="credentials[email]" placeholder="EMAIL" required>
               <input class="input" type="password" name="credentials[password]" placeholder="PASSWORD" required>
@@ -61,6 +67,17 @@
         </section>
         <br>
 
+        <section class="fourth forms" id="game-stats">
+          <h2>Game Stats</h2>
+          <form>
+            <button class="button" id="game-index" type="click">Game Stats</button>
+            <br>
+            <div id="games-played"></div>
+            <div id="game-id"></div>
+            <div id="message6"></div>
+          </form>
+        </section>
+
 
 
 
@@ -76,14 +93,19 @@
           <button type="click">X's</button>
           <button type="click">O's</button>
         </section> -->
-        <p id="message4"></p>
-        <p id="message5"></p>
+        <section class="message forms2" id="message-forms45">
+          <form>
+              <div id="message4"></div>
+              <div id="message5"></div>
+          </form>
+        </section>
+
+
         <section id="game-section">
           <h3>Game Board</h3>
           <div class="container">
 
             <button class="srtBtn" id="game-create" type="click">START GAME</button>
-            <button class-"hisBtn" id="game-index" type="click">HISTORY</button>
             <div class="row h-100 board">
               <div data-cell-index='0' id="one" class="col-4 col-lg-4 box"></div>
               <div data-cell-index='1' id="two" class="col-4 col-lg-4 box"></div>

@@ -1,4 +1,4 @@
-const config = require('./../config')
+const config = require('./../config.js')
 const store = require('./../store.js')
 
 const signUp = function (data) {
@@ -55,14 +55,13 @@ const logOut = function (formData) {
 }
 
 const gameCreate = function (response) {
-  // console.log('store in game create is ', store)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: '{}'
+    data: {}
   })
 }
 

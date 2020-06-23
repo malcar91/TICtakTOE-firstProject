@@ -9,7 +9,7 @@ const onSignUpSuccess = function (response) {
 }
 
 const onSignUpFailure = function () {
-  $('#message').text('Sign up FAILED')
+  $('#message').fadeOut(3000).text('Sign up FAILED')
   $('form').trigger('reset')
 }
 
@@ -18,6 +18,9 @@ const onLogInSuccess = function (response) {
   $('form').trigger('reset')
   $('#signed-in-options').show()
   $('#game-section').show()
+  $('#game-stats').show()
+  $('#message-forms23').show()
+  $('#message-forms45').show()
   $('#logged-in').hide()
   $('#signed-up').hide()
   store.user = response.user
@@ -50,13 +53,13 @@ const onLogOutSuccess = function () {
 
 const onGameCreateSuccess = function (response) {
   console.log('I created a game first ', response.game)
-  $('#message4').text('Lets Start the GAME!')
+  $('#message4').text('Player X, Lets Start the GAME!')
   $('form').trigger('reset')
   store.game = response.game
 }
 
 const onGameCreateFailure = function () {
-  $('#message4').text('Game Create Failure')
+  $('#message4').fadeOut(4000).text('Game Create Failure')
 }
 
 const onGameUpdateSuccess = function (response) {
@@ -72,11 +75,12 @@ const onGameUpdateFailure = function () {
 
 const onGameIndexSuccess = function (response) {
   console.log(response)
-  $('#message4').text(`Lets look at your history: ${response.games.length}`)
+  $('#games-played').text(`You've played: ${response.games.length}`)
+  $('#game-id').text(`Your game ID: ${response.game._id}`)
 }
 
 const onGameIndexFailure = function () {
-  $('#message4').text('NEW GAME DID NOT START')
+  $('#message4').text('Unable to pull up history')
 }
 
 module.exports = {

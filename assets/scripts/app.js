@@ -17,6 +17,10 @@ $(() => {
 
   $('#signed-in-options').hide()
   $('#game-section').hide()
+  $('#game-stats').hide()
+
+  $('#message-forms23').hide()
+  $('#message-forms45').hide()
 
   $('#game-create').on('click', userAction.onGameCreate)
   $('#game-index').on('click', userAction.onGameIndex)
