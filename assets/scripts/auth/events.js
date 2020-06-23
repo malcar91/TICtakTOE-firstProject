@@ -76,43 +76,53 @@ const onGameUpdate = function (event) {
   }
 
   const box = store.game.cells
-  console.log(box)
+  // console.log(box)
   if (box[0] === box[1] && box[0] === box[2] && box[0] !== '') {
     console.log('Winner is ' + box[0])
     $('#message5').show().fadeOut(5000).text('Player ' + box[0] + ' is the WINNER!')
+    $('.box').fadeToggle('fast', 'linear')
+    $('.box').off('click', onGameUpdate)
     store.game.over = true
   } else if (box[3] === box[4] && box[4] === box[5] && box[3] !== '') {
     console.log('Winner is ' + box[3])
     $('#message5').show().fadeOut(5000).text('Player ' + box[3] + ' is the WINNER!')
     store.game.over = true
+    $('.box').off('click', onGameUpdate)
   } else if (box[6] === box[7] && box[7] === box[8] && box[6] !== '') {
     console.log('Winner is ' + box[6])
     $('#message5').show().fadeOut(5000).text('Player ' + box[6] + ' is the WINNER!')
     store.game.over = true
+    $('.box').off('click', onGameUpdate)
   } else if (box[0] === box[3] && box[3] === box[6] && box[0] !== '') {
     console.log('Winner is ' + box[0])
     $('#message5').show().fadeOut(3000).text('Player ' + box[0] + ' is the WINNER!')
     store.game.over = true
+    $('.box').off('click', onGameUpdate)
   } else if (box[1] === box[4] && box[4] === box[7] && box[1] !== '') {
     console.log('Winner is ' + box[1])
     $('#message5').show().fadeOut(5000).text('Player ' + box[1] + ' is the WINNER!')
     store.game.over = true
+    $('.box').off('click', onGameUpdate)
   } else if (box[2] === box[5] && box[5] === box[8] && box[2] !== '') {
     console.log('Winner is ' + box[2])
     $('#message5').show().fadeOut(5000).text('Player ' + box[2] + ' is the WINNER!')
     store.game.over = true
+    $('.box').off('click', onGameUpdate)
   } else if (box[0] === box[4] && box[4] === box[8] && box[0] !== '') {
     console.log('Winner is ' + box[0])
     $('#message5').show().fadeOut(5000).text('Player ' + box[0] + ' is the WINNER!')
     store.game.over = true
+    $('.box').off('click', onGameUpdate)
   } else if (box[2] === box[4] && box[4] === box[6] && box[2] !== '') {
     console.log('Winner is ' + box[2])
     $('#message5').show().fadeOut(5000).text('Player ' + box[2] + ' is the WINNER!')
     store.game.over = true
+    $('.box').off('click', onGameUpdate)
   }
   if (store.game.cells.every(e => e !== '')) {
     console.log('ITS A TIE!')
     $('#message5').show().fadeOut(5000).text('ITS A TIE, PLAY AGAIN!')
+    $('.box').off('click', onGameUpdate)
   }
   const position = $(event.target).data('cell-index')
 
@@ -122,11 +132,18 @@ const onGameUpdate = function (event) {
 }
 
 const onGameIndex = function (event) {
-  console.log(onGameIndex)
+  // console.log(onGameIndex)
   event.preventDefault()
   api.gameIndex()
     .then(ui.onGameIndexSuccess)
     .catch(ui.onGameIndexFailure)
+}
+
+const onGameShow = function (event) {
+  event.preventDefault()
+  api.gameShow()
+    .then(ui.onGameShowSuccess)
+    .catch(ui.onGameShowFailure)
 }
 
 module.exports = {
@@ -137,7 +154,8 @@ module.exports = {
   onGameCreate,
   onGameUpdate,
   player,
-  onGameIndex
+  onGameIndex,
+  onGameShow
   // gameModel
   // gameMove,
   // gameIndex

@@ -76,11 +76,19 @@ const onGameUpdateFailure = function () {
 const onGameIndexSuccess = function (response) {
   console.log(response)
   $('#games-played').text(`You've played: ${response.games.length}`)
-  $('#game-id').text(`Your game ID: ${response.game._id}`)
+  // $('#game-id').text(`Your game ID: ${response.game._id}`)
 }
 
 const onGameIndexFailure = function () {
   $('#message4').text('Unable to pull up history')
+}
+
+const onGameShowSuccess = function (response) {
+  $('#game-id').text(`Game info: ${response.games.length}`)
+}
+
+const onGameShowFailure = function () {
+  $('#game-id').text('Unable to pull game info')
 }
 
 module.exports = {
@@ -97,5 +105,7 @@ module.exports = {
   onGameUpdateSuccess,
   onGameUpdateFailure,
   onGameIndexSuccess,
-  onGameIndexFailure
+  onGameIndexFailure,
+  onGameShowSuccess,
+  onGameShowFailure
 }

@@ -24,6 +24,7 @@ $(() => {
 
   $('#game-create').on('click', userAction.onGameCreate)
   $('#game-index').on('click', userAction.onGameIndex)
+  $('#game-show').on('click', userAction.onGameShow)
 
   $('.box').on('click', userAction.onGameUpdate)
   // $('#two').on('click', userAction.onGameUpdate)

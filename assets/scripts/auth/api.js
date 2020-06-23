@@ -65,10 +65,11 @@ const gameCreate = function (response) {
   })
 }
 
-const gameIndex = function () {
+const gameIndex = function (over) {
+  over = over === undefined ? '' : '?over=' + over
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/games/',
+    url: config.apiUrl + '/games' + over,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -76,12 +77,12 @@ const gameIndex = function () {
 }
 
 const gameShow = function (data) {
-  console.log('gameShow', gameShow)
+  // console.log('gameShow', gameShow)
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/games/_id',
+    url: config.apiUrl + '/games/:id',
     headers: {
-      Authorization: 'Token token=' + store.user
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
