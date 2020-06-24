@@ -3,7 +3,7 @@ const store = require('./../store.js')
 const onSignUpSuccess = function (response) {
   $('#message2').text('WELCOME ' + response.user.email + ', log in to PLAY!')
   $('form').trigger('reset')
-  $('#signed-in-options').show()
+  $('#change-password').show()
   $('#logged-in').show()
   $('#signed-up').hide()
 }
@@ -16,7 +16,7 @@ const onSignUpFailure = function () {
 const onLogInSuccess = function (response) {
   $('#message2').fadeOut(3000).text('Logged In! Welcome back!')
   $('form').trigger('reset')
-  $('#signed-in-options').show()
+  $('#change-password').show()
   $('#game-section').show()
   $('#game-stats').show()
   $('#message-forms23').show()
@@ -27,7 +27,7 @@ const onLogInSuccess = function (response) {
 }
 
 const onLogInFailure = function () {
-  $('#message').fadeOut(5000).text('Log in FAILED')
+  $('#message').show().fadeOut(5000).text('Log in FAILED')
   $('form').trigger('reset')
 }
 

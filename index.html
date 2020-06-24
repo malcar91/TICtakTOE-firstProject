@@ -6,12 +6,21 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" href="style.css">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 
-<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+      <!-- <html ng-app="ionicApp">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="https://code.ionicframework.com/1.0.0-beta.6/css/ionic.css" rel="stylesheet">
+ <script src="https://code.ionicframework.com/1.0.0-beta.6/js/ionic.bundle.js"></script> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
     </head>
     <body>
@@ -19,81 +28,59 @@
       <br>
 
       <main>
-        <section class="message forms2" id="message-forms23">
+        <!-- <section class="message forms2" id="message-forms23">
           <form>
-            <div id="message"></div>
-            <div id="message2"></div>
-            <div id="message3"></div>
+            <p id="message"></p>
+            <p id="message2"></p>
+            <p id="message3"></p>
+          </form>
+        </section> -->
+      <!-- action="index.html" method="post" -->
+
+        <section class="form-box" id="logged-in">
+          <div class="button-box">
+            <div class="btn"></div>
+            <button type="button" class="toggle-btn" id="login">Log In</button>
+            <button type="button" class="toggle-btn" id="signup">Sign Up</button>
+          </div>
+          <form class="forms login" id="log-in">
+            <!-- <h2>Login Here</h2> -->
+            <input class="input-field" type="text" name="credentials[email]" placeholder="EMAIL" required>
+            <input class="input-field" type="password" name="credentials[password]" placeholder="PASSWORD" required>
+            <button type="submit" class="submit-btn">Sign In</button>
+          </form>
+          <form class="forms signup" id="sign-up">
+            <!-- <h2>Sign Up Here</h2> -->
+            <input class="input-field" type="text" name="credentials[email]" placeholder="EMAIL" required>
+            <input class="input-field" type="password" name="credentials[password]" placeholder="PASSWORD" required>
+            <input class="input-field" type="password" name="credentials[password_confirmation]" placeholder="RE-TYPE PASSWORD" required>
+            <button type="submit" class="submit-btn">Sign Up</button>
           </form>
         </section>
 
-        <section class="first forms" id="logged-in">
-          <!-- <h2>Welcome Back!</h2> -->
-          <h2>Login Here</h2>
-            <form id="log-in">
-              <input class="input" type="text" name="credentials[email]" placeholder="EMAIL" required>
-              <input class="input" type="password" name="credentials[password]" placeholder="PASSWORD" required>
-              <br>
-              <button class="button" type="submit">Log In</button>
-            </form>
-
-        </section>
-        <br>
-
-        <section class="second forms" id="signed-up">
-        <h2>Sign Up Here</h2>
-          <form id="sign-up">
-            <input class="input" type="text" name="credentials[email]" placeholder="EMAIL" required>
-            <input class="input" type="password" name="credentials[password]" placeholder="PASSWORD" required>
-            <input class="input" type="password" name="credentials[password_confirmation]" placeholder="RE-TYPE PASSWORD" required>
-            <br>
-            <button class="button" type="submit">Sign up</button>
-          </form>
-
-        </section>
-        <br>
-
-        <section class="third forms" id="signed-in-options">
-          <form id="change-pw">
+        <section id="change-password">
+          <form class="forms2" id="change-pw">
           <h2>Change Password</h2>
-            <input class="input" type="password" name="passwords[old]" placeholder="old password" required>
-            <input class="input" type="password" name="passwords[new]" placeholder="new password" required>
-            <br>
-            <button class="button" type="submit">Change Password</button>
-            <br>
+            <input type="password" name="passwords[old]" placeholder="old password" required>
+            <input type="password" name="passwords[new]" placeholder="new password" required>
+            <button type="submit">Change Password</button>
           </form>
           <button class="button" id="log-out" type="click">LOG OUT</button>
           <br>
         </section>
         <br>
 
-        <section class="fourth forms" id="game-stats">
-          <h2>Game Stats</h2>
-          <form>
+        <section id="game-stats">
+          <form class="forms2">
+            <h2>Game Stats</h2>
             <button class="button" id="game-index" type="click">Game Stats</button>
             <button class="button" id="game-show" type="click">Game Info</button>
-            <br>
-            <div id="games-played"></div>
-            <div id="game-id"></div>
-            <div id="message6"></div>
+            <p id="games-played"></p>
+            <p id="game-id"></p>
+            <p id="message6"></p>
           </form>
         </section>
 
-
-
-
-        <!-- <section>
-          <h3>Choose Game Mode</h3>
-            <button type="click">Best of 3</button>
-            <button type="click">Best of 5</button>
-            <button type="click">Best of 7</button>
-        </section>
-
-        <section>
-          <h3>Choose Player</h3>
-          <button type="click">X's</button>
-          <button type="click">O's</button>
-        </section> -->
         <section class="message forms2" id="message-forms45">
           <form>
               <div id="message4"></div>
@@ -121,6 +108,27 @@
           </div>
       </section>
 
+      <!-- <script>
+        let x = document.getElementById("login");
+        let y = document.getElementById("signup");
+        let z = document.getElementById("btn");
+
+        function signup() {
+          x.style.left = "-400px";
+          y.style.left = "50px";
+          z.style.left = "100px";
+        }
+        function login() {
+          x.style.left = "50px";
+          y.style.left = "450px";
+          z.style.left = "0px"
+        }
+
+      </script> -->
+
     </main>
+
+
+
   </body>
 </html>

@@ -15,7 +15,10 @@ $(() => {
   $('#change-pw').on('submit', userAction.onChangePw)
   $('#log-out').on('click', userAction.onLogOut)
 
-  $('#signed-in-options').hide()
+  $('#login').on('click', userAction.onTogLog)
+  $('#signup').on('click', userAction.onTogSign)
+
+  $('#change-password').hide()
   $('#game-section').hide()
   $('#game-stats').hide()
 

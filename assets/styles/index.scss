@@ -2,116 +2,258 @@
 
 @font-face {
   font-family: 'Shadows Into Light', cursive;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Shadows Into Light', cursive;
 }
 
 h1 {
-  text-align: center;
-  font-size: 97px;
   font-family: 'Shadows Into Light', cursive;
+  font-size: 97px;
+  text-align: center;
 }
 
-.body{
-  display: flex;
-  align-items: space-between;
-  background: #2b6309;
-  font-family: 'Shadows Into Light', cursive;
-}
+// body {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: space-between;
+//   // background: #2b6309;
+//   font-family: 'Shadows Into Light', cursive;
+// }
 
 p {
   text-align: center;
 }
 
 h3 {
-  text-align: center;
-  font-size: 64px;
   font-family: 'Shadows Into Light', cursive;
+  font-size: 64px;
+  text-align: center;
+}
+
+.form-box {
+  width: 380px;
+  height: 480px;
+  border: 2px solid black;
+  position: relative;
+  margin: 6% auto;
+  // background: #98e1de;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.button-box {
+  width: 240px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #489d1b;
+  border-radius: 30px;
+}
+
+.toggle-btn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  text-align: center;
+}
+
+.btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 130px;
+  height: 100%;
+  background: linear-gradient(to right, #489d1b, #1b8c9d);
+  border-radius: 30px;
+  transition: .5s;
 }
 
 .forms {
-  width: 300px;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  flex-flow: column wrap;
-  text-align: center;
-  background: 878E99;
+  top: 180px;
+  position: absolute;
+  width: 280px;
+  transition: .5s;
 }
 
-.forms2 {
-  width: 300px;
-  height: 62.5;
-  display: flex;
-  justify-content: center;
-  flex-flow: column wrap;
-  text-align: center;
+.input-field {
+  width: 100%;
+  padding: 10px 0;
+  margin: 5px 0;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
 }
 
-.first {
-  display: flex;
-  justify-content: center;
-  border: 2px solid black;
+.submit-btn {
+  width: 85%;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
   margin: auto;
-  font-family: 'Shadows Into Light', cursive;
+  background: linear-gradient(to right, #489d1b, #1b8c9d);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
 }
 
-.second {
-  display: flex;
-  justify-content: center;
-  border: 2px solid black;
-  margin: auto;
-  font-family: 'Shadows Into Light', cursive;
+.login {
+  left: 50px;
 }
 
-.third {
-  display: flex;
-  justify-content: center;
-  border: 2px solid black;
-  margin: auto;
-  font-family: 'Shadows Into Light', cursive;
+.signup {
+  left: 450px;
 }
 
-.fourth {
-  display: flex;
-  justify-content: center;
-  border: 2px solid black;
-  margin: auto;
-  font-family: 'Shadows Into Light', cursive;
-}
+// .forms {
+//   width: 300px;
+//   padding: 20px;
+//   position: relative;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   text-align: center;
+//   display: flex;
+//   align-content: center;
+//   flex-direction: column;
+//   input {
+//     border: 0;
+//     background: none;
+//     display: flex;
+//     margin: 5px auto;
+//     text-align: center;
+//     border: 2px solid #489d1b;
+//     padding: 14px 10px;
+//     width: 200px;
+//     outline: none;
+//     color: white;
+//     border-radius: 24px;
+//     transition: 0.25s;
+//   }
+// }
 
-.message {
-  display: flex;
-  justify-content: center;
-  border: 2px solid white;
-  margin: auto;
-  font-family: 'Shadows Into Light', cursive;
-}
+// .forms input[type = 'text'],
+// .forms input[type = 'password'] {
+//   border: 0;
+//   background: none;
+//   display: flex;
+//   margin: 20px auto;
+//   text-align: center;
+//   border: 2px solid #489d1b;
+//   padding: 14px 10px;
+//   width: 200px;
+//   outline: none;
+//   color: white;
+//   border-radius: 24px;
+//   transition: 0.25s;
+// }
+//
+// .forms input[type = "text"]:focus,.forms input[type = "password"]:focus {
+//   width: 280px;
+//   border-color: #489d1b;
+// }
 
-.button {
-  border-radius: 12px;
-  background: #489d1b;
-  padding: .5rem;
-  font-family: 'Shadows Into Light', cursive;
-  color: white;
-  margin: auto;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  &:hover {
-    background: #1b8c9d;
-  }
-}
 
-.input {
-  display: flex;
-  margin: auto;
-  text-align: center;
-  align-content: space-between;
-  font-size: 12px;
-  &:hover {
-    background: #9dd8dd;
-    color: #000000;
-  }
 
-}
+// .forms {
+//   width: 300px;
+//   height: 250px;
+//   display: flex;
+//   justify-content: center;
+//   flex-flow: column wrap;
+//   text-align: center;
+//   background: 878E99;
+// }
+
+// .forms2 {
+//   width: 250px;
+//   height: 62.5;
+//   display: flex;
+//   justify-content: center;
+//   flex-flow: column wrap;
+//   text-align: center;
+// }
+
+// .first {
+//   display: flex;
+//   justify-content: center;
+//   border: 2px solid black;
+//   margin: auto;
+//   font-family: 'Shadows Into Light', cursive;
+// }
+//
+// .second {
+//   display: flex;
+//   justify-content: center;
+//   border: 2px solid black;
+//   margin: auto;
+//   font-family: 'Shadows Into Light', cursive;
+// }
+
+// .third, .fourth {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   border: 2px solid black;
+//   margin: auto;
+//   font-family: 'Shadows Into Light', cursive;
+// }
+
+// .fourth {
+//   display: flex;
+//   justify-content: center;
+//   border: 2px solid black;
+//   margin: auto;
+//   font-family: 'Shadows Into Light', cursive;
+// }
+
+// .third .fourth {
+//   display: flex;
+//   flex-direction: row;
+// }
+//
+// .message {
+//   display: flex;
+//   justify-content: center;
+//   border: 2px solid white;
+//   margin: auto;
+//   font-family: 'Shadows Into Light', cursive;
+// }
+
+// .button {
+//   border-radius: 12px;
+//   background: #489d1b;
+//   padding: .5rem;
+//   font-family: 'Shadows Into Light', cursive;
+//   color: white;
+//   margin: auto;
+//   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+//   &:hover {
+//     background: #1b8c9d;
+//   }
+// }
+
+// .input {
+//   display: flex;
+//   margin: auto;
+//   // padding:;
+//   text-align: center;
+//   align-content: space-between;
+//   font-size: 12px;
+//   &:hover {
+//     background: #9dd8dd;
+//     color: #000000;
+//   }
+
+
 
 .srtBtn {
   display: flex;

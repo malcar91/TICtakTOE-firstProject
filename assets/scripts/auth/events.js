@@ -62,6 +62,7 @@ const onGameUpdate = function (event) {
   store.game.cells[$(event.target).data('cell-index')] = player
 
   if ($(event.target).is(':empty')) {
+    store.game.cells = store.game.player ? 'X' : 'O'
     $(event.target).text(player)
     if (player === 'X') {
       player = 'O'
@@ -72,6 +73,21 @@ const onGameUpdate = function (event) {
     }
   } else {
     $('#message4').show().fadeOut(5000).text('BOX IS ALREADY TAKEN!')
+    // angular.module('ionicApp', ['ionic'])
+    // .controller('PlaylistsCtrl', function ($scope, $ionicPopup, $timeout) {
+    //     $scope.data = {}
+    //
+    //     // Triggered on a button click, or some other target
+    //     $scope.showPopup = function () {
+    //       const alertPopup = $ionicPopup.alert({
+    //         title: 'BOX IS ALREADY TAKEN!',
+    //         template: 'Pick another box please'
+    //       })
+    //       alertPopup.then(function (res) {
+    //         console.log('it worked!')
+    //       })
+    //     }
+    //   })
     return 'invalid move'
   }
 
@@ -145,7 +161,20 @@ const onGameShow = function (event) {
     .then(ui.onGameShowSuccess)
     .catch(ui.onGameShowFailure)
 }
+// let x = document.getElementById('login')
+// let y = document.getElementById('signup')
+// let z = document.getElementById('btn')
 
+const onTogSign = function (x, y, z) {
+  x.style.left = '-400px'
+  y.style.left = '50px'
+  z.style.left = '100px'
+}
+const onTogLog = function (x, y, z) {
+  x.style.left = '50px'
+  y.style.left = '450px'
+  z.style.left = '0px'
+}
 module.exports = {
   onSignUp,
   onLogIn,
@@ -155,7 +184,9 @@ module.exports = {
   onGameUpdate,
   player,
   onGameIndex,
-  onGameShow
+  onGameShow,
+  onTogLog,
+  onTogSign
   // gameModel
   // gameMove,
   // gameIndex
