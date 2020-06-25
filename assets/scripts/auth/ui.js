@@ -16,11 +16,11 @@ const onSignUpFailure = function () {
 const onLogInSuccess = function (response) {
   $('#message2').fadeOut(3000).text('Logged In! Welcome back!')
   $('form').trigger('reset')
-  $('#change-password').show()
+  // $('#change-password').show()
   $('#game-section').show()
   $('#game-stats').show()
-  $('#message-forms23').show()
-  $('#message-forms45').show()
+  $('#nav-bar').show()
+  $('#change-pw2').show().on('click', $('#change-password').show())
   $('#logged-in').hide()
   $('#signed-up').hide()
   store.user = response.user
@@ -49,6 +49,8 @@ const onLogOutSuccess = function () {
   $('#change-pw').hide()
   $('#logged-in').show()
   $('#signed-in-options').hide()
+  $('#game-stats').hide()
+  $('#nav-bar').hide()
 }
 
 const onGameCreateSuccess = function (response) {

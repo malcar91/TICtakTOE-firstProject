@@ -103,8 +103,8 @@ const gameUpdate = function (position, player) {
     data: {
       game: {
         cell: {
-          index: position,
-          value: player
+          index: position, // index
+          value: player // value
         },
         over: store.game.over
       }

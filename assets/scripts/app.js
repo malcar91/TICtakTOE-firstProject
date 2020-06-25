@@ -6,8 +6,6 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const userAction = require('./auth/events')
-// const boxClicks = require('./auth/events')
-// const gameStart = require('./auth/events')
 
 $(() => {
   $('#sign-up').on('submit', userAction.onSignUp)
@@ -15,27 +13,35 @@ $(() => {
   $('#change-pw').on('submit', userAction.onChangePw)
   $('#log-out').on('click', userAction.onLogOut)
 
-  $('#login').on('click', userAction.onTogLog)
-  $('#signup').on('click', userAction.onTogSign)
+  // <----------- Tab login menu ---------------------------------->
+  $('.login').hide()
+  $('.log2').css('background', 'none')
 
+  $('.log2').click(function () {
+    $('.signup').hide()
+    $('.login').show()
+    $('.sign2').css('background', 'none')
+    $('.log2').css('background', '#fff')
+  })
+  $('.sign2').click(function () {
+    $('.signup').show()
+    $('.login').hide()
+    $('.log2').css('background', 'none')
+    $('.sign2').css('background', '#fff')
+  })
+  // <----------   ----      -----         ------------->
+
+  // $('update-info').on('click', userAction.onUpdateInfo)
+  $('#nav-bar').hide()
+  $('#change-password').hide()
+  $('#update-info').hide()
   $('#change-password').hide()
   $('#game-section').hide()
   $('#game-stats').hide()
-
-  $('#message-forms23').hide()
-  $('#message-forms45').hide()
 
   $('#game-create').on('click', userAction.onGameCreate)
   $('#game-index').on('click', userAction.onGameIndex)
   $('#game-show').on('click', userAction.onGameShow)
 
   $('.box').on('click', userAction.onGameUpdate)
-  // $('#two').on('click', userAction.onGameUpdate)
-  // $('#three').on('click', userAction.onGameUpdate)
-  // $('#four').on('click', userAction.onGameUpdate)
-  // $('#five').on('click', userAction.onGameUpdate)
-  // $('#six').on('click', userAction.onGameUpdate)
-  // $('#seven').on('click', userAction.onGameUpdate)
-  // $('#eight').on('click', userAction.onGameUpdate)
-  // $('#nine').on('click', userAction.onGameUpdate)
 })

@@ -24,7 +24,15 @@
 
     </head>
     <body>
-      <h1>TIC tac TOE</h1>
+      <header>
+        <h1>TIC tac TOE</h1>
+          <ul id="nav-bar">
+            <li><button id="log-out" type="click">LOG OUT</button></li>
+            <li><button id="change-pw2" type="click">Change Password</button></li>
+          </ul>
+      </header>
+
+
       <br>
 
       <main>
@@ -38,10 +46,9 @@
       <!-- action="index.html" method="post" -->
 
         <section class="form-box" id="logged-in">
-          <div class="button-box">
-            <div class="btn"></div>
-            <button type="button" class="toggle-btn" id="login">Log In</button>
-            <button type="button" class="toggle-btn" id="signup">Sign Up</button>
+          <div>
+            <div type="text" class="toggle-btn log2" id="login">Log In</div>
+            <div type="text" class="toggle-btn sign2" id="signup">Sign Up</divs>
           </div>
           <form class="forms login" id="log-in">
             <!-- <h2>Login Here</h2> -->
@@ -55,44 +62,51 @@
             <input class="input-field" type="password" name="credentials[password]" placeholder="PASSWORD" required>
             <input class="input-field" type="password" name="credentials[password_confirmation]" placeholder="RE-TYPE PASSWORD" required>
             <button type="submit" class="submit-btn">Sign Up</button>
+            <div>
+              <p id="message"></p>
+            </div>
           </form>
         </section>
 
-        <section id="change-password">
+        <!-- <button id="update-info">Update Info</button> -->
+
+        <section class="form-box" id="change-password">
           <form class="forms2" id="change-pw">
           <h2>Change Password</h2>
-            <input type="password" name="passwords[old]" placeholder="old password" required>
-            <input type="password" name="passwords[new]" placeholder="new password" required>
-            <button type="submit">Change Password</button>
+            <input class="input-field2" type="password" name="passwords[old]" placeholder="old password" required>
+            <input class="input-field2" type="password" name="passwords[new]" placeholder="new password" required>
+            <button class="submit-btn2" type="submit">Change Password</button>
           </form>
-          <button class="button" id="log-out" type="click">LOG OUT</button>
+
           <br>
         </section>
         <br>
 
-        <section id="game-stats">
+
+
+        <section class="form-box" id="game-stats">
           <form class="forms2">
             <h2>Game Stats</h2>
-            <button class="button" id="game-index" type="click">Game Stats</button>
-            <button class="button" id="game-show" type="click">Game Info</button>
-            <p id="games-played"></p>
-            <p id="game-id"></p>
-            <p id="message6"></p>
-          </form>
-        </section>
-
-        <section class="message forms2" id="message-forms45">
-          <form>
-              <div id="message4"></div>
-              <div id="message5"></div>
+            <button class="submit-btn2" id="game-index" type="click">Game Stats</button>
+            <!-- <button class="submit-btn2" id="game-show" type="click">Game Info</button> -->
+            <ul>
+              <li id="games-played" ></li>
+              <li id="game-id" ></li>
+            </ul>
           </form>
         </section>
 
 
         <section id="game-section">
           <h3>Game Board</h3>
+          <form class="msg-center">
+            <ul>
+              <li id="message4"></li>
+              <li id="message5"></li>
+              <li id="message6"></li>
+            </ul>
+          </form>
           <div class="container">
-
             <button class="srtBtn" id="game-create" type="click">START GAME</button>
             <div class="row h-100 board">
               <div data-cell-index='0' id="one" class="col-4 col-lg-4 box"></div>
@@ -108,27 +122,7 @@
           </div>
       </section>
 
-      <!-- <script>
-        let x = document.getElementById("login");
-        let y = document.getElementById("signup");
-        let z = document.getElementById("btn");
-
-        function signup() {
-          x.style.left = "-400px";
-          y.style.left = "50px";
-          z.style.left = "100px";
-        }
-        function login() {
-          x.style.left = "50px";
-          y.style.left = "450px";
-          z.style.left = "0px"
-        }
-
-      </script> -->
-
     </main>
-
-
 
   </body>
 </html>
