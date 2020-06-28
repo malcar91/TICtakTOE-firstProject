@@ -11,19 +11,19 @@
 }
 
 body{
-  background-color: #e9eaea;
+  background-color: #c6f5f3;
 }
 
 h1 {
   font-family: 'Shadows Into Light', cursive;
-  font-size: 97px;
+  font-size: 110px;
   text-align: center;
 }
 
 header li {
   display: inline;
   padding: 0px 10px 0px 10px;
-  align-content: flex-end;
+  align-content: center;
 }
 
 p {
@@ -32,16 +32,80 @@ p {
 
 h3 {
   font-family: 'Shadows Into Light', cursive;
+  font-size: 75px;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Shadows Into Light', cursive;
   font-size: 64px;
   text-align: center;
 }
+
+.authHeaders {
+  text-align: center;
+  width: 350px;
+  margin: 15px auto;
+  border: none;
+  padding: 5px;
+}
+
+//
+// .overlay {
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   background: rgba(0, 0, 0, 0.7);
+//   transition: opacity 500ms;
+//   visibility: hidden;
+//   opacity: 0;
+// }
+// .overlay:target {
+//   visibility: visible;
+//   opacity: 1;
+// }
+//
+// .popup {
+//   margin: 70px auto;
+//   padding: 20px;
+//   background: #fff;
+//   border-radius: 5px;
+//   width: 30%;
+//   position: relative;
+//   transition: all 5s ease-in-out;
+// }
+
+// .popup h2 {
+//   margin-top: 0;
+//   color: #333;
+//   font-family: Tahoma, Arial, sans-serif;
+// }
+// .popup .close {
+//   position: absolute;
+//   top: 20px;
+//   right: 30px;
+//   transition: all 200ms;
+//   font-size: 30px;
+//   font-weight: bold;
+//   text-decoration: none;
+//   color: #333;
+// }
+// .popup .close:hover {
+//   color: #06D85F;
+// }
+// .popup .content {
+//   max-height: 30%;
+//   overflow: auto;
+// }
 
 .form-box {
   width: 450px; // 380px
   // height: 480px; // 480px
   border: none;
   // position: relative;
-  margin: 30px auto; // 6%auto
+  margin: 45px auto; // 6%auto
   // background: #98e1de;
   // padding: 5px;
   // overflow: hidden;
@@ -82,6 +146,11 @@ h3 {
   text-align: center;
   margin-top: 5px;
 }
+.forms2 li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px 10px 5px
+}
 
 .input-field {
   width: 100%;
@@ -98,7 +167,8 @@ h3 {
   background: transparent;
   &:hover {
     background: linear-gradient(to right, #caf0b6, #a4d6de);
-    color: white;
+    color: black;
+    font-family: sans-serif;
   }
   font-size: 16px;
 }
@@ -117,7 +187,8 @@ h3 {
   background: transparent;
   &:hover {
     background: linear-gradient(to right, #caf0b6, #a4d6de);
-    color: white;
+    color: black;
+    font-family: sans-serif;
   }
 }
 
@@ -152,19 +223,53 @@ h3 {
   outline: none;
   border-radius: 10px;
 }
+.gamestat-btn3 {
+  width: 35%;
+  font-size: 16px;
+  padding: 5px 15px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  background: linear-gradient(to right, #489d1b, #1b8c9d);
+  &:hover {
+    background: linear-gradient(to right, #caf0b6, #a4d6de);
+  }
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+}
+
+
+
+.logoutbtn, .chngpwbtn {
+  background: linear-gradient(to right, #489d1b, #1b8c9d);
+  &:hover {
+    background: linear-gradient(to right, #caf0b6, #a4d6de);
+  }
+  border-radius: 10px;
+}
+
+.gameheader {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 .msg-center {
   text-align: center;
 }
 
 .srtBtn {
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  border-radius: 45px;
+  height: 40px;
+  width: 35%;
   background: #c42121;
+  font-size: 24px;
   font-family: 'Shadows Into Light', cursive;
-  color: white;
+  color: linear-gradient(to right, #489d1b, #1b8c9d);
   &:hover {
-    background: #5ed4e4;
+    background: #489d1b;
     color: #000000;
   }
 }
@@ -225,3 +330,9 @@ h3 {
     border-bottom: 0;
   }
 }
+
+// @media screen and (max-width: 700px){
+//   .popup{
+//     width: 70%;
+//   }
+// }

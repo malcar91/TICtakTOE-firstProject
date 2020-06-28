@@ -1,97 +1,97 @@
 const store = require('./../store.js')
 
 const onSignUpSuccess = function (response) {
-  $('#message2').text('WELCOME ' + response.user.email + ', log in to PLAY!')
+  $('#message2').text('WELCOME ' + response.user.email + ', log in to PLAY!').css('font-size', '18px')
   $('form').trigger('reset')
-  $('#change-password').show()
   $('#logged-in').show()
   $('#signed-up').hide()
 }
 
 const onSignUpFailure = function () {
-  $('#message').fadeOut(3000).text('Sign up FAILED')
+  $('#message7').fadeOut(3000).text('Sign up FAILED').css('font-size', '24px')
   $('form').trigger('reset')
 }
 
 const onLogInSuccess = function (response) {
-  $('#message2').fadeOut(3000).text('Logged In! Welcome back!')
+  $('#message2').show().fadeOut(5000).text('Logged In! Welcome back!').css('font-size', '24px')
   $('form').trigger('reset')
-  // $('#change-password').show()
-  $('#game-section').show()
-  $('#game-stats').show()
+  $('#game-header').show()
   $('#nav-bar').show()
-  $('#change-pw2').show().on('click', $('#change-password').show())
+  // $('#change-pw2').show().on('click', $('#change-password').show())
   $('#logged-in').hide()
   $('#signed-up').hide()
   store.user = response.user
 }
 
 const onLogInFailure = function () {
-  $('#message').show().fadeOut(5000).text('Log in FAILED')
+  $('#message3').show().fadeOut(5000).text('Log in FAILED!, try again please').css('font-size', '24px')
   $('form').trigger('reset')
 }
 
 const onChangePwSuccess = function () {
-  $('#message3').fadeOut(5000).text('Password changed succesfully!')
+  $('#message').show().fadeOut(5000).text('Password changed succesfully!').css('font-size', '18px')
+  $('#change-password').hide()
   $('form').trigger('reset')
 }
 
 const onChangePwFailure = function () {
-  $('#message3').text('WHOOPS! Didnt work ;(')
+  $('#message').show().fadeOut(5000).text('WHOOPS! Didnt work').css('font-size', '18px')
   $('form').trigger('reset')
 }
 
 const onLogOutSuccess = function () {
-  $('#message2').show(400).delay(5000).fadeOut(3000).text('LOGGED OUT, See you soon!')
-  $('#message2').show(400).fadeIn('BUT WAIT!... COME BACK!')
+  $('#message2').show().fadeOut(5000).text('LOGGED OUT, See you soon!').css('font-size', '24px')
+  // $('#message3').fadeIn(5000).text('BUT WAIT... COME BACK!')
   $('form').trigger('reset')
-  $('#game-section').hide()
-  $('#change-pw').hide()
-  $('#logged-in').show()
-  $('#signed-in-options').hide()
+  $('#game-board').hide()
+  // $('#change-pw').hide()
+  $('#game-header').hide()
+  // $('#signed-in-options').hide()
   $('#game-stats').hide()
   $('#nav-bar').hide()
+  $('#logged-in').show()
 }
 
 const onGameCreateSuccess = function (response) {
   console.log('I created a game first ', response.game)
-  $('#message4').text('Player X, Lets Start the GAME!')
+  $('#message4').fadeOut(5000).text('Player X, Lets Start the GAME!')
+  $('#game-board').show()
+  $('#game-stats').show()
   $('form').trigger('reset')
   store.game = response.game
+  store.games = response.games
 }
 
 const onGameCreateFailure = function () {
   $('#message4').fadeOut(4000).text('Game Create Failure')
 }
 
-const onGameUpdateSuccess = function (response) {
-  $('#message4').fadeOut(2000).text('Nice Choice')
+const onGameUpdateSuccess = function () {
   $('form').trigger('reset')
-  // store.game = response.game
 }
 
 const onGameUpdateFailure = function () {
-  $('#message4').text('game did not update')
+  $('#message4').text('Game did not update')
   $('form').trigger('reset')
 }
 
 const onGameIndexSuccess = function (response) {
-  console.log(response)
-  $('#games-played').text(`You've played: ${response.games.length}`)
+  console.log(onGameIndexSuccess)
+  $('#games-played').text(`You've played: ${response.games.length}`).css('font-size', '24px')
   // $('#game-id').text(`Your game ID: ${response.game._id}`)
 }
 
 const onGameIndexFailure = function () {
-  $('#message4').text('Unable to pull up history')
+  $('#games-played').text('Unable to pull up history')
 }
 
-const onGameShowSuccess = function (response) {
-  $('#game-id').text(`Game info: ${response.games.length}`)
-}
-
-const onGameShowFailure = function () {
-  $('#game-id').text('Unable to pull game info')
-}
+// const onGameShowSuccess = function (response) {
+//   $('#game-id').text(`Game info: ${response.games.length}`)
+// }
+//
+// const onGameShowFailure = function () {
+//   $('#game-id').text('Unable to pull game info')
+// }
 
 module.exports = {
   onSignUpSuccess,
@@ -107,7 +107,7 @@ module.exports = {
   onGameUpdateSuccess,
   onGameUpdateFailure,
   onGameIndexSuccess,
-  onGameIndexFailure,
-  onGameShowSuccess,
-  onGameShowFailure
+  onGameIndexFailure
+  // onGameShowSuccess,
+  // onGameShowFailure
 }

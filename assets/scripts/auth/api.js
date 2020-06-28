@@ -54,22 +54,21 @@ const logOut = function (formData) {
   })
 }
 
-const gameCreate = function (response) {
+const gameCreate = function () {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {}
+    data: ''
   })
 }
 
-const gameIndex = function (over) {
-  over = over === undefined ? '' : '?over=' + over
+const gameIndex = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/games' + over,
+    url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -88,8 +87,8 @@ const gameShow = function (data) {
 }
 
 const gameUpdate = function (position, player) {
-  console.log('position is ', position)
-  console.log('player is ', player)
+  // console.log('position is ', position)
+  // console.log('player is ', player)
   // console.log('id is ', store.game._id)
   // console.log('over is ' + store.game.over)
   // set index to 0 and value to x
@@ -106,7 +105,7 @@ const gameUpdate = function (position, player) {
           index: position, // index
           value: player // value
         },
-        over: store.game.over
+        over: store.game.over // store.game.over
       }
     }
   })

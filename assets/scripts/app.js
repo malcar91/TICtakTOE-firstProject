@@ -34,14 +34,19 @@ $(() => {
   // $('update-info').on('click', userAction.onUpdateInfo)
   $('#nav-bar').hide()
   $('#change-password').hide()
-  $('#update-info').hide()
+  // $('#update-info').hide()
   $('#change-password').hide()
-  $('#game-section').hide()
+  $('#game-board').hide()
   $('#game-stats').hide()
+  $('#game-header').hide()
 
   $('#game-create').on('click', userAction.onGameCreate)
   $('#game-index').on('click', userAction.onGameIndex)
-  $('#game-show').on('click', userAction.onGameShow)
+
+  $('#change-pw2').click(function () {
+    $('#change-password').show()
+  })
+  // $('#game-show').on('click', userAction.onGameShow)
 
   $('.box').on('click', userAction.onGameUpdate)
 })

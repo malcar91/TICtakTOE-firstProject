@@ -27,23 +27,16 @@
       <header>
         <h1>TIC tac TOE</h1>
           <ul id="nav-bar">
-            <li><button id="log-out" type="click">LOG OUT</button></li>
-            <li><button id="change-pw2" type="click">Change Password</button></li>
+            <li><button class="logoutbtn" id="log-out" type="click">LOG OUT</button></li>
+            <li><button class="chngpwbtn" id="change-pw2" type="click">Change Password</button></li>
           </ul>
       </header>
 
-
-      <br>
-
       <main>
-        <!-- <section class="message forms2" id="message-forms23">
-          <form>
-            <p id="message"></p>
-            <p id="message2"></p>
-            <p id="message3"></p>
-          </form>
-        </section> -->
-      <!-- action="index.html" method="post" -->
+        <section class="authHeaders">
+          <p id="message2"></p>
+          <p id="message"></p>
+        </section>
 
         <section class="form-box" id="logged-in">
           <div>
@@ -55,23 +48,23 @@
             <input class="input-field" type="text" name="credentials[email]" placeholder="EMAIL" required>
             <input class="input-field" type="password" name="credentials[password]" placeholder="PASSWORD" required>
             <button type="submit" class="submit-btn">Sign In</button>
+            <br>
+            <p id="message3"></p>
           </form>
           <form class="forms signup" id="sign-up">
             <!-- <h2>Sign Up Here</h2> -->
             <input class="input-field" type="text" name="credentials[email]" placeholder="EMAIL" required>
             <input class="input-field" type="password" name="credentials[password]" placeholder="PASSWORD" required>
             <input class="input-field" type="password" name="credentials[password_confirmation]" placeholder="RE-TYPE PASSWORD" required>
-            <button type="submit" class="submit-btn">Sign Up</button>
-            <div>
-              <p id="message"></p>
+            <button type="submit" class="submit-btn" >Sign Up</button>
+            <p id="message7"></p>
             </div>
           </form>
         </section>
 
-        <!-- <button id="update-info">Update Info</button> -->
-
         <section class="form-box" id="change-password">
           <form class="forms2" id="change-pw">
+          <a class="close" href="#">&times;</a>
           <h2>Change Password</h2>
             <input class="input-field2" type="password" name="passwords[old]" placeholder="old password" required>
             <input class="input-field2" type="password" name="passwords[new]" placeholder="new password" required>
@@ -80,34 +73,38 @@
 
           <br>
         </section>
-        <br>
 
-
-
-        <section class="form-box" id="game-stats">
-          <form class="forms2">
-            <h2>Game Stats</h2>
-            <button class="submit-btn2" id="game-index" type="click">Game Stats</button>
-            <!-- <button class="submit-btn2" id="game-show" type="click">Game Info</button> -->
-            <ul>
-              <li id="games-played" ></li>
-              <li id="game-id" ></li>
-            </ul>
-          </form>
+        <section class="gameheader" id="game-header">
+          <h3>Game Board</h3>
+          <button type="click" class="srtBtn" id="game-create">START GAME</button>
+          <!-- <div>
+            <a type="button" class="srtBtn" id="game-create" href="popup1">START GAME</a>
+            <!-- type="click", use to be in this button tag -->
+          <!-- </div>
+          <div id="popup1" class="overlay">
+            <div class="popup">
+              <h5>LETS START THE GAME!</h5>
+              <a class="close" href="#">&times;</a>
+              <div class="content">
+                Alright player X, make the first move! Click the board.
+              </div>
+            </div>
+          </div> -->
         </section>
 
-
-        <section id="game-section">
-          <h3>Game Board</h3>
-          <form class="msg-center">
+        <section id="game-board">
+          <div class="msg-center">
             <ul>
               <li id="message4"></li>
               <li id="message5"></li>
               <li id="message6"></li>
+              <li id="message8"></li>
             </ul>
-          </form>
+
+          </div>
+
           <div class="container">
-            <button class="srtBtn" id="game-create" type="click">START GAME</button>
+
             <div class="row h-100 board">
               <div data-cell-index='0' id="one" class="col-4 col-lg-4 box"></div>
               <div data-cell-index='1' id="two" class="col-4 col-lg-4 box"></div>
@@ -120,6 +117,18 @@
               <div data-cell-index='8' id="nine" class="col-4 col-lg-4 box"></div>
             </div>
           </div>
+      </section>
+
+      <section class="form-box" id="game-stats">
+        <form class="forms2">
+          <h4>Game Stats</h4>
+          <button class="gamestat-btn3" id="game-index" type="click">Game Stats</button>
+          <!-- <button class="submit-btn2" id="game-show" type="click">Game Info</button> -->
+          <ul>
+            <li id="games-played" ></li>
+            <li id="game-id" ></li>
+          </ul>
+        </form>
       </section>
 
     </main>
