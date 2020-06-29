@@ -77,7 +77,7 @@ const onGameUpdateFailure = function () {
 
 const onGameIndexSuccess = function (response) {
   console.log(onGameIndexSuccess)
-  $('#games-played').text(`You've played: ${response.games.length} game`).css('font-size', '24px')
+  $('#games-played').text(`You've played: ${response.games.length} games`).css('font-size', '24px')
 }
 
 const onGameIndexFailure = function () {
