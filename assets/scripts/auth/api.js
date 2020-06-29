@@ -76,7 +76,6 @@ const gameIndex = function () {
 }
 
 const gameShow = function (data) {
-  // console.log('gameShow', gameShow)
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/games/:id',
@@ -87,12 +86,6 @@ const gameShow = function (data) {
 }
 
 const gameUpdate = function (position, player) {
-  // console.log('position is ', position)
-  // console.log('player is ', player)
-  // console.log('id is ', store.game._id)
-  // console.log('over is ' + store.game.over)
-  // set index to 0 and value to x
-
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game._id,
@@ -102,10 +95,10 @@ const gameUpdate = function (position, player) {
     data: {
       game: {
         cell: {
-          index: position, // index
-          value: player // value
+          index: position,
+          value: player
         },
-        over: store.game.over // store.game.over
+        over: store.game.over
       }
     }
   })

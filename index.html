@@ -25,11 +25,17 @@
     </head>
     <body>
       <header>
+
         <h1>TIC tac TOE</h1>
-          <ul id="nav-bar">
-            <li><button class="logoutbtn" id="log-out" type="click">LOG OUT</button></li>
+        <div class="navbar" id="nav-bar">
+          <!-- <ul id="nav-bar">
+            <li></li>
             <li><button class="chngpwbtn" id="change-pw2" type="click">Change Password</button></li>
-          </ul>
+          </ul> -->
+          <button class="chngpwbtn" id="change-pw2" type="click">Change Password</button>
+          <button class="logoutbtn" id="log-out" type="click">LOG OUT</button>
+
+        </div>
       </header>
 
       <main>
@@ -77,19 +83,6 @@
         <section class="gameheader" id="game-header">
           <h3>Game Board</h3>
           <button type="click" class="srtBtn" id="game-create">START GAME</button>
-          <!-- <div>
-            <a type="button" class="srtBtn" id="game-create" href="popup1">START GAME</a>
-            <!-- type="click", use to be in this button tag -->
-          <!-- </div>
-          <div id="popup1" class="overlay">
-            <div class="popup">
-              <h5>LETS START THE GAME!</h5>
-              <a class="close" href="#">&times;</a>
-              <div class="content">
-                Alright player X, make the first move! Click the board.
-              </div>
-            </div>
-          </div> -->
         </section>
 
         <section id="game-board">

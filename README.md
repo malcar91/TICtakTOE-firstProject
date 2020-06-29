@@ -43,3 +43,5 @@ I first started with designing my wireframe so I know what I want the layout of 
 
 
 ### Wireframes
+![Laptop WireFrame](https://imgur.com/WRwOCG6)
+![Mobile WireFrame](https://imgur.com/DcKfJPg()

@@ -31,10 +31,8 @@ $(() => {
   })
   // <----------   ----      -----         ------------->
 
-  // $('update-info').on('click', userAction.onUpdateInfo)
   $('#nav-bar').hide()
   $('#change-password').hide()
-  // $('#update-info').hide()
   $('#change-password').hide()
   $('#game-board').hide()
   $('#game-stats').hide()
@@ -46,7 +44,6 @@ $(() => {
   $('#change-pw2').click(function () {
     $('#change-password').show()
   })
-  // $('#game-show').on('click', userAction.onGameShow)
 
   $('.box').on('click', userAction.onGameUpdate)
 })

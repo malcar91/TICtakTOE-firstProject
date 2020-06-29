@@ -3,7 +3,6 @@ const getFormFields = require('./../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('./../store.js')
-// const cells = ['#one', '', '', '', '', '', '', '', '']
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -29,7 +28,6 @@ const onLogIn = function (event) {
 
 const onChangePw = function (event) {
   event.preventDefault()
-  // $('#chnage-pw2').show($('#change-password'))
 
   const form = event.target
   const data = getFormFields(form)
@@ -66,12 +64,8 @@ const onGameUpdate = function (event) {
     return
   }
 
-  // store.game.cells[event.target.id] = player
   if ($(event.target).is(':empty')) {
-    // console.log(store.game.cells)
     store.game.cells[$(event.target).data('cell-index')] = player
-    // console.log(store.game.cells)
-    // console.log(player)
     $(event.target).text(player)
 
     if (player === 'X') {
