@@ -16,11 +16,11 @@ I first started with designing my wireframe so I know what I want the layout of 
 
 ### User Stories
 
-- A user will open the page and be presented with to input forms.
-- A user coming back to the site will see the first box to sign in.
-- A new user then will see the second box to sign up. Once signed up then the user will be told to log in.
-- Once logged there will be a welcome message and the view changes to another input form for being able to change the password. IF user wants to change the password and again there will be a confirming message that the user changed password succesfully.
-- Underneath there will be a button to start the game along side the gameboard
+- A user will open the page and be presented with input forms.
+- A user coming back to the site will see the tab box to sign in.
+- A new user then will see the second tab to sign up. Once signed in then the user will be told to log in.
+- Once logged there will be a welcome message and the view changes to a log out and change password button under the header. IF user wants to change the password they will click the button and the change password form will appear. Once password is changed succesfully the form will dissapear.
+- Underneath there will be a button to start the game, once clicked the gameboard and game stats boxes will appear along with a message telling player X to play.
 - Once clicked the user will be able to click on the gameboard and try to beat whomever they are playing.
 - Once a user wins there will be a display message saying which player has won.
 - Once the user is done playing however many games he wants then he can log out.
@@ -38,8 +38,10 @@ I first started with designing my wireframe so I know what I want the layout of 
 
 ### Unsolved Problems
 
-- Still need to store gaming information more effeciently when looking up game history. Site is not showing total wins and loses and the board is still clickable after a player wins the game.
-- Would like to eventually have site with above features working. More of a fun background, animation when clicking and displaying winners and losers. Also make sure the app works with mobile by adding media queries.
+- The change password form will only dissapear when succesfully changing the password. If you hit the button and do not change your password and then log out, the form will still be there.
+- Placing it differently in my ui.js with .show() and .hide() will not allow it to show back up again when logging back into the page with out refresh.
+- Would like to eventually have site with above features working. More of a fun background, animation when clicking and displaying winners and losers such as higlighting the winnning squares. Also tracking which player wins the most within the session.
+- to be able to play online with a friend would also be very cool feature to add. 
 
 
 ### Wireframes
