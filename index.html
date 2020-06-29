@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="stylesheet" href="style.css">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <!-- <html ng-app="ionicApp">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <link href="https://code.ionicframework.com/1.0.0-beta.6/css/ionic.css" rel="stylesheet">
+ <script src="https://code.ionicframework.com/1.0.0-beta.6/js/ionic.bundle.js"></script> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+      <header>
+
+        <h1>TIC tac TOE</h1>
+        <div class="navbar" id="nav-bar">
+          <!-- <ul id="nav-bar">
+            <li></li>
+            <li><button class="chngpwbtn" id="change-pw2" type="click">Change Password</button></li>
+          </ul> -->
+          <button class="chngpwbtn" id="change-pw2" type="click">Change Password</button>
+          <button class="logoutbtn" id="log-out" type="click">LOG OUT</button>
+
+        </div>
+      </header>
+
+      <main>
+        <section class="authHeaders">
+          <p id="message2"></p>
+          <p id="message"></p>
+        </section>
+
+        <section class="form-box" id="logged-in">
+          <div>
+            <div type="text" class="toggle-btn log2" id="login">Log In</div>
+            <div type="text" class="toggle-btn sign2" id="signup">Sign Up</divs>
+          </div>
+          <form class="forms login" id="log-in">
+            <!-- <h2>Login Here</h2> -->
+            <input class="input-field" type="text" name="credentials[email]" placeholder="EMAIL" required>
+            <input class="input-field" type="password" name="credentials[password]" placeholder="PASSWORD" required>
+            <button type="submit" class="submit-btn">Sign In</button>
+            <br>
+            <p id="message3"></p>
+          </form>
+          <form class="forms signup" id="sign-up">
+            <!-- <h2>Sign Up Here</h2> -->
+            <input class="input-field" type="text" name="credentials[email]" placeholder="EMAIL" required>
+            <input class="input-field" type="password" name="credentials[password]" placeholder="PASSWORD" required>
+            <input class="input-field" type="password" name="credentials[password_confirmation]" placeholder="RE-TYPE PASSWORD" required>
+            <button type="submit" class="submit-btn" >Sign Up</button>
+            <p id="message7"></p>
+            </div>
+          </form>
+        </section>
+
+        <section class="form-box" id="change-password">
+          <form class="forms2" id="change-pw">
+          <a class="close" href="#">&times;</a>
+          <h2>Change Password</h2>
+            <input class="input-field2" type="password" name="passwords[old]" placeholder="old password" required>
+            <input class="input-field2" type="password" name="passwords[new]" placeholder="new password" required>
+            <button class="submit-btn2" type="submit">Change Password</button>
+          </form>
+
+          <br>
+        </section>
+
+        <section class="gameheader" id="game-header">
+          <h3>Game Board</h3>
+          <button type="click" class="srtBtn" id="game-create">START GAME</button>
+        </section>
+
+        <section id="game-board">
+          <div class="msg-center">
+            <ul>
+              <li id="message4"></li>
+              <li id="message5"></li>
+              <li id="message6"></li>
+              <li id="message8"></li>
+            </ul>
+
+          </div>
+
+          <div class="container">
+
+            <div class="row h-100 board">
+              <div data-cell-index='0' id="one" class="col-4 col-lg-4 box"></div>
+              <div data-cell-index='1' id="two" class="col-4 col-lg-4 box"></div>
+              <div data-cell-index='2' id="three" class="col-4 col-lg-4 box"></div>
+              <div data-cell-index='3' id="four" class="col-4 col-lg-4 box"></div>
+              <div data-cell-index='4' id="five" class="col-4 col-lg-4 box"></div>
+              <div data-cell-index='5' id="six" class="col-4 col-lg-4 box"></div>
+              <div data-cell-index='6' id="seven" class="col-4 col-lg-4 box"></div>
+              <div data-cell-index='7' id="eight" class="col-4 col-lg-4 box"></div>
+              <div data-cell-index='8' id="nine" class="col-4 col-lg-4 box"></div>
+            </div>
+          </div>
+      </section>
+
+      <section class="form-box" id="game-stats">
+        <form class="forms2">
+          <h4>Game Stats</h4>
+          <button class="gamestat-btn3" id="game-index" type="click">Game Stats</button>
+          <!-- <button class="submit-btn2" id="game-show" type="click">Game Info</button> -->
+          <ul>
+            <li id="games-played" ></li>
+            <li id="game-id" ></li>
+          </ul>
+        </form>
+      </section>
+
+    </main>
+
+  </body>
+</html>
